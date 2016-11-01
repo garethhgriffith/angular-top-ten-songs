@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Song List Creator</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/tether.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="js/angular-modal-service.min.js"></script>
+    <script type="text/javascript" src="js/angular-spotify.min.js"></script>
+    <script type="text/javascript" src="js/main.controller.js"></script>
+</head>
+
+<body ng-controller="ListController">
+    <div class="jumbotron">
+        <div class="container">
+            <h2>Top 10 Song List Creator</h2>
+            <label>Search : </label>
+            <input class="searchBox" type="text" ng-model="searchtrack" placeholder="Search by artist, album, track">
+            <button class="btn btn-primary" ng-click="searchTrack()" role="button">Search</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container-fluid col-xs-8">
+            <div class="card-columns">
+                <div class="card-deck">
+                    <div class="card mb-3" ng-repeat="track in tracks track by $index">
+                        <img class="card-img-top" ng-src="{{track.album.images[0].url}}" alt="{{track.album.name}}">
+                        <div class="card-block">
+                            <h4 class="card-title">{{track.name}}</h4>
+                            <p class="card-text">{{track.artists[0].name}}</p>
+                            <p class="card-text">{{track.album.name}}</p>
+                            <button href class="btn btn-primary" ng-click="showAddSong(this)">Add Track</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="row ml-0">
+                <h3 class="mt-0">{{trackList.title}}</h3>
+                <button class="btn btn-primary" ng-click="showEditTitle()" role="button">Edit List Name</button>
+                <a ng-href="{{url}}" download="topTenList.json" id="saveListBtn" class="btn btn-primary" role="button">Save Your List</a>
+            </div>
+            <hr />
+            <div class="row row-bordered mb-1" ng-repeat="track in trackList.songs track by $index">
+                <img class="col-sm-6" ng-src="{{track.customImage}}" alt="Card image cap">
+                <div class="col-sm-6">
+                    <h4>{{track.track}}</h4>
+                    <p>{{track.artist}}</p>
+                    <p>{{track.album}}</p>
+                    <p><em>{{track.note}}</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
