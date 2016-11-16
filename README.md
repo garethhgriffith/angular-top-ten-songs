@@ -1,4 +1,4 @@
-# AirportDistanceCalc
+# Top Ten Song List Creator
 > Single page web application that utilizes the Spotify API to help users build a list of their top ten songs and export them as a JSON file.
 
 ![Screenshot](https://raw.githubusercontent.com/garethhgriffith/README_IMAGES/master/topTenSongs.png "Screenshot")
@@ -6,8 +6,7 @@
 ### Link to application
 http://www.garethgriffith.com/topTenList
 
-#Installation Instructions
-### To run this application locally follow these instructions:
+### Installation Instructions
 - Clone this repo to your local machine
 - Run: `npm install`
 - Run: `gulp`
