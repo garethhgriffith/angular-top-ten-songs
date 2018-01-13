@@ -3,8 +3,8 @@
 
 ![Screenshot](https://raw.githubusercontent.com/garethhgriffith/README_IMAGES/master/topTenSongs.png "Screenshot")
 
-### Link to application
-http://www.garethgriffith.com/topTenList
+<!-- ### Link to application -->
+<!-- http://www.garethgriffith.com/topTenList -->
 
 ### Installation Instructions
 - Clone this repo to your local machine
